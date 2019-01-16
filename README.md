@@ -4,7 +4,7 @@ In this project we will insert data in excel file or update the existing excel f
 
 ## Steps
 1. Clone or download the files.
-2. Go to the directory where you clone ``` cd Update data in excel sheet (NodeJs)```
+2. Go to the directory where you clone ``` cd Update-data-in-Excel-sheet-NodeJs```
 3. Install npm files ``` npm install ```
 4. Start project ``` npm start ```
 
