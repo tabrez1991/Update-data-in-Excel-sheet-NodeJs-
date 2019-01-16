@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <form method="">
+        <input type="text" id="myText2" placeholder="Name"><br />
+        <input type="text" id="myText" placeholder="Mobile"><br />
+        <button onclick="myFunction()">Submit</button>
+    </form>
+
+    <script>
+        function myFunction() {
+            var Input = document.getElementById('myText2').value;
+            var search = document.getElementById('myText').value;
+            //var data = { 'Input': Input, 'search': search }
+            // var api = 'http://localhost:8080/getData';
+            // alert(api)
+            // $.ajax({
+            //     type: 'GET',
+            //     data: data,
+            //     contentType: "json",
+            //     cache: false,
+            //     url: api,
+            // }).done(function (data) {
+            //     console.log(data);
+            // });
+
+
+            var _data = {'input' : Input,'search':search};
+
+            console.log(_data);
+            var settings = {
+                "async": true,
+               // "crossDomain": true,
+                "data": _data,
+                "url": "http://localhost:8090/getData",
+                "method": "GET"
+            }
+
+            $.ajax(settings).done(function (response) {
+                output.innerHTML = JSON.parse(response).status;
+            });
+        }
+    </script>
+</body>
+</html>
